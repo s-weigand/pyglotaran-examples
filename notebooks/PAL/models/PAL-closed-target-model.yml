@@ -1,0 +1,71 @@
+type: kinetic-spectrum
+
+megacomplex:
+  mc1:
+    k_matrix: [km1,km_open]
+
+k_matrix:
+  km1:
+    matrix:
+      (s1, s1): kinetic.2
+      (s1, s2): kinetic.1_1
+      (s2, s1): kinetic.1
+      (s2, s2): kinetic.2
+      (s3, s1): kinetic.3
+      (s3, s3): kinetic.2
+  km_open:
+    matrix:
+      (s4, s4): kinetic.2
+      (s4, s5): kinetic.4_2
+      (s5, s4): kinetic.4
+      (s5, s5): kinetic.5
+      
+      
+      
+irf:
+  irf1:
+    type: spectral-multi-gaussian
+    center: [irf_common.center, irf_common.center]
+    width: [irf_1.width, irf_2.width]
+    scale:  [irf_1.scale, irf_2.scale]
+    backsweep: True
+    backsweep_period: irf_common.backsweep
+
+
+initial_concentration:
+  input1:
+    compartments: [s1, s2, s3, s4, s5]
+    parameters: [
+      input.1,
+      input.0,
+      input.0,
+      input.4,
+      input.0,
+      ]
+      
+
+spectral_constraints:
+  - type: zero
+    compartment: s2
+    interval:
+      - [1, 690]
+  - type: zero
+    compartment: s3
+    interval:
+      - [1, 1000]
+  - type: zero
+    compartment: s5
+    interval:
+      - [1, 1000]
+
+dataset:
+  dataset1:
+    initial_concentration: input1
+    megacomplex: [mc1]
+    irf: irf1
+    
+
+weights:
+  - datasets: [dataset1]
+    global_interval: [780, 1000]
+    value: 0.3

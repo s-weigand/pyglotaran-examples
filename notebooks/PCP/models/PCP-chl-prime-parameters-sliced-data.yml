@@ -1,0 +1,35 @@
+input:
+  - ["1", 1]
+  - ["0", 0]
+  - {vary: false}
+
+irf:
+  - ["center", 0.03]
+  - ["width", 0.06]
+
+kinetic:
+  - [11, {vary: false}]
+  - [4.1, {vary: false}]
+  - [0.6, {vary: false}]
+  - [0.2, {vary: false}]
+  - [0.4, {vary: false}]
+  - [0.02, {vary: false}]
+  - [5e-4, {vary: false}]
+  - [0.6, {vary: false}]
+  - [0.04, {vary: false}]
+  - [0.04, {vary: false}]
+  - ["11", {expr: '$kinetic.2 * $scaling.1'}]
+  - ["12", {expr: '$kinetic.8 * $scaling.1'}]
+  - ["13", {expr: '$kinetic.5 * $scaling.1'}]
+  - ["14", {expr: '$kinetic.6 * $scaling.1'}]
+  - ["15", {expr: '$kinetic.2 * $scaling.2'}]
+  - ["16", {expr: '$kinetic.8 * $scaling.2'}]
+  - ["17", {expr: '$kinetic.5 * $scaling.2'}]
+  - ["18", {expr: '$kinetic.6 * $scaling.2'}]
+
+rel:
+  - ['r1', 1, {"vary": False}]
+  
+scaling:
+  - [0.80, {vary: false}]
+  - [0.20, {vary: false}]

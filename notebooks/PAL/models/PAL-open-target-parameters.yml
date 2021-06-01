@@ -1,0 +1,34 @@
+input:
+  - ["1", 0.7]
+  - ["0", 0]
+  - ["4", 0.3]
+  - {vary: false}
+
+
+irf_common:
+  - ["center", 100.229, {vary: false}]
+  - ["backsweep", 13800.0, {vary: false}]
+  
+irf_1: 
+  - ["width", 4.63948, {vary: false}]
+  - ["scale", 1, {vary: false}]
+  
+irf_2: 
+  - ["width", 48.8929, {vary: false}]
+  - ["scale", 0.136, {vary: false}]
+
+
+#   pattern <#kinetic>_<#scaling>
+kinetic:
+  - ["1", 0.087, {vary: false}]
+  - ["1_1", {expr: '$kinetic.1 * $scaling.1'}]
+  - ["2", 5e-4, {vary: false}]
+  - ["3", 0.066, {vary: false}]
+  - ["4", 0.0033]
+  - ["4_2", {expr: '$kinetic.4 * $scaling.2'}]
+  - ["5", 0.0029]
+
+scaling:
+  - [1.7, {vary: false}]
+  - [4]
+  
