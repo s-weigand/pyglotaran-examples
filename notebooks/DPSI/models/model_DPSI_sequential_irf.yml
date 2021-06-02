@@ -1,0 +1,98 @@
+type: kinetic-spectrum
+dataset:
+  dataset1:
+    megacomplex: [complex1]
+#    megacomplex_scale: [scalem.1]
+    initial_concentration: input400
+    irf: irf1
+    scale: scale.1
+  dataset2:
+    megacomplex: [complex1]
+#    megacomplex_scale: [scalem.1]
+    initial_concentration: input400
+    irf: irf2
+    scale: scale.2
+  dataset3:
+    megacomplex: [complex2]
+#    megacomplex_scale: [scalem.6,scalem.7,scalem.8]
+    initial_concentration: input590
+    irf: irf3
+    scale: scale.3
+  dataset4:
+    megacomplex: [complex2]
+#    megacomplex_scale: [scalem.6,scalem.9,scalem.10]
+    initial_concentration: input590
+    irf: irf4
+    scale: scale.4
+
+megacomplex:
+  complex1:
+    k_matrix: [km1]
+  complex2:
+    k_matrix: [km2]
+
+# how can i now express that the first 20 lines  
+# are common for complexes 1-5, and the next 11 lines  
+# are common for complexes 1-4? how can i specify in chunks?
+# note that earlier definition will override later definition
+k_matrix:
+  km1:
+    matrix:
+      (s2, s1): rates.k1
+      (s3, s2): rates.k2
+      (s4, s3): rates.k3
+      (s4, s4): rates.k4
+  km2:
+    matrix:
+      (t2, t1): rates2.k1
+      (t3, t2): rates2.k2
+      (t4, t3): rates2.k3
+      (t4, t4): rates2.k4
+
+
+initial_concentration:
+  input400:
+    compartments: [s1, s2, s3, s4]
+    parameters: [inputs.one, inputs.zero, inputs.zero, inputs.zero]
+  input590:
+    compartments: [t1, t2, t3, t4]
+    parameters: [inputs.one, inputs.zero, inputs.zero, inputs.zero]
+
+# it is implicitly normalized, i.e. divided by sum of irfscale parameters
+irf:
+  irf1:
+    type: spectral-multi-gaussian
+    center: [irf.center1]
+    width: [irf.width1,irf.width2]
+    scale: [irf.scale1,irf.scale2]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp1, irf.data1_disp2]
+    backsweep: True
+    backsweep_period: irf.common_backsweep
+  irf2:
+    type: spectral-multi-gaussian
+    center: [irf.center2]
+    width: [irf.width3,irf.width4]
+    scale: [irf.scale1,irf.scale3]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp1, irf.data1_disp2]
+    backsweep: True
+    backsweep_period: irf.common_backsweep
+  irf3:
+    type: spectral-multi-gaussian
+    center: [irf.center3]
+    width: [irf.width5,irf.width6]
+    scale: [irf.scale1,irf.scale4]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp3, irf.data1_disp4]
+    backsweep: True
+    backsweep_period: irf.common_backsweep
+  irf4:
+    type: spectral-multi-gaussian
+    center: [irf.center4]
+    width: [irf.width7,irf.width8]
+    scale: [irf.scale1,irf.scale5]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp3, irf.data1_disp4]
+    backsweep: True
+    backsweep_period: irf.common_backsweep

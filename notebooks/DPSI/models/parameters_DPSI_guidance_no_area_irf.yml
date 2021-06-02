@@ -1,0 +1,95 @@
+inputs:
+  - ["zero", 0, { vary: False }]
+  - ["one", 1, { vary: False }]
+
+inputs400: 
+  - ["APC660", 1, { vary: False }]
+  - ["APC660a", 0.75, { vary: False }]
+  - ["APC680", 0.25, { vary: False }]
+  - ["PC650", 3, { vary: False }]
+  - ["PC640", 1.5, { vary: False }]
+  - ["PS2", 25.3496037, { vary: False }]
+
+
+inputs590:
+  - ["APC660", 1, { vary: False }]
+  - ["APC660a", 0.75, { vary: False }]
+  - ["APC680", 0.25, { vary: False }]
+  - ["PC650", 3, { vary: False }]
+  - ["PC640", 3, { "expr": "$inputs590.PC650" }]
+  - ["PS2", 6.46513462, { vary: False }]
+
+rates:
+  - ["k1", 0.004, {"vary": False}]
+  - ["k26", 1, {"expr": "$rates.k1*0.75"}]
+  - ["k2", 7.83E-4, {"vary": False}]
+  - ["k4", 0.09158, {"vary": False}]
+  - ["k3", 1, {"expr": "$rates.k4*0.75"}]
+  - ["k5", 0.234, {"vary": False}]
+  - ["k6", 1, {"expr": "$rates.k5*0.3"}]
+  - ["k7", 0.0116, {"vary": False}]
+  - ["k8", 0.0017, {"vary": False}]
+  - ["k9", 1, {"expr": "$rates.k7*0.75"}]
+  - ["k24", 0.0689,{"vary": False}]
+  - ["k25", 0.00728,{"vary": False}]
+  - ["k40", 7.81E-4, {"vary": False}]
+  - ["k43", 0.1,{"vary": False}]
+  - ["k44", 3.1E-3,{"vary": False}]
+  - ["k45", 5.36E-4,{"vary": False}]
+  - ["k48", 1.E-9,{"vary": False}] #NB this is a special value, so small that backsweep should not be applied! it is for an all absorbing loss compartment without SAS
+  - ["k52", 6.06E-4,{"vary": False}]
+  - ["k53", 3.3E-3,{"vary": False}]
+  - ["k54", 1.4E-2,{"vary": False}]
+  - ["k55", 1.466E-3,{"vary": False}]
+  - ["k56", 0.05,{"vary": False}]
+  - ["k57", 2.19E-3,{"vary": False}]
+
+# area:
+#   - ['1', 3.4634, {"vary": False}]
+
+rel:
+  - ['equals', 1, {"vary": False}]
+
+scale:
+  - ["1", 1, {"vary": False}]
+  - ["2", 0.3013, {"vary": True}]
+  - ["3", 4.5534, {"vary": True}]
+  - ["4", 1.312, {"vary": True}]
+  - ["5", 9.42E-1, {"vary": True}]
+
+scalem:
+  - ["1", 1, {"vary": False}]
+  - ["2", 0.481, {"vary": False}]
+  - ["3", 0.4956, {"vary": False}]
+  - ["4", 0.599, {"vary": False}]
+  - ["5", 0.459, {"vary": False}]
+  - ["6", 1., {"vary": False}]
+  - ["7", 0.08188, {"vary": False}]
+  - ["8", 0.1148, {"vary": False}]
+  - ["9", 0.0917, {"vary": False}]
+  - ["10", 0.07, {"vary": False}]
+
+irf:
+  - ["center1",51.2005653, {"vary": False}]
+  - ["center2",50.7999496, {"vary": False}]
+  - ["center3",50.809700, {"vary": False}]
+  - ["center4",50.6241035, {"vary": False}]
+  - ["width1_1",8.11060429, {"vary": False}]
+  - ["width1_2",37.0027199, {"vary": False}]
+  - ["width2_1",2.96260023, {"vary": False}]
+  - ["width2_2",18.3664494, {"vary": False}]
+  - ["width3_1",8.27260399, {"vary": False}]
+  - ["width3_2",25.1025658, {"vary": False}]
+  - ["width4_1",3.38692617, {"vary": False}]
+  - ["width4_2",14.6400690, {"vary": False}]
+  - ["scale_full",1, {"vary": False}]
+  - ["scale1",0.216619715, {"vary": True}]
+  - ["scale2",0.140048981, {"vary": True}]
+  - ["scale3",0.234819189, {"vary": True}]
+  - ["scale4",0.213202134, {"vary": True}]
+  - ["common_dispcenter",700, {"vary": False}]
+  - ["data1_disp1",-1.64111042, {"vary": False}]
+  - ["data1_disp2",4.38865376, {"vary": False}]
+  - ["data1_disp3",-2.19848228, {"vary": False}]
+  - ["data1_disp4",6.17810106, {"vary": False}]
+  - ["common_backsweep",13800, {"vary": False}]

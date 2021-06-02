@@ -1,0 +1,250 @@
+type: kinetic-spectrum
+dataset:
+  dataset1:
+    megacomplex: [open1,closed1,complex5]
+    megacomplex_scale: [scalem.1,scalem.2,scalem.3]
+    initial_concentration: input400
+    irf: irf1
+    scale: scale.1
+  dataset2:
+    megacomplex: [open1,closed1,complex5]
+    megacomplex_scale: [scalem.1,scalem.4,scalem.5]
+    initial_concentration: input400
+    irf: irf2
+    scale: scale.2
+  dataset3:
+    megacomplex: [open2,closed2,complex5]
+    megacomplex_scale: [scalem.6,scalem.7,scalem.8]
+    initial_concentration: input590
+    irf: irf3
+    scale: scale.3
+  dataset4:
+    megacomplex: [open2,closed2,complex5]
+    megacomplex_scale: [scalem.6,scalem.9,scalem.10]
+    initial_concentration: input590
+    irf: irf4
+    scale: scale.4
+  dataset5:
+    megacomplex: [complex6]
+    initial_concentration: input5
+    scale: scale.5
+  dataset6:
+    megacomplex: [complex7]
+    initial_concentration: input6
+    scale: scale.5
+
+megacomplex:
+  open1:
+    k_matrix: [km1common,km1out,km1ps2open]
+  closed1:
+    k_matrix: [km1common,km1out,km1ps2closed]
+  open2:
+    k_matrix: [km1common,km1out,km1ps2open2]
+  closed2:
+    k_matrix: [km1common,km1out,km1ps2closed2]
+  complex5:
+    k_matrix: [km1common,km5out]
+  complex6:
+    k_matrix: [km6]
+  complex7:
+    k_matrix: [km7]
+
+# how can i now express that the first 20 lines  
+# are common for complexes 1-5, and the next 11 lines  
+# are common for complexes 1-4? how can i specify in chunks?
+# note that earlier definition will override later definition
+k_matrix:
+  km1common:
+    matrix:
+      (s1, s2): rates.k1
+      (s2, s1): rates.k1
+      (s3, s1): rates.k26
+      (s1, s3): rates.k1
+      (s3, s2): rates.k3
+      (s2, s3): rates.k4
+      (s3, s4): rates.k6
+      (s4, s3): rates.k5
+      (s5, s1): rates.k8
+      (s1, s5): rates.k7
+      (s6, s2): rates.k8
+      (s2, s6): rates.k7
+      (s7, s3): rates.k8
+      (s3, s7): rates.k9
+      (s5, s8): rates.k24
+      (s8, s5): rates.k25
+      (s6, s9): rates.k24
+      (s9, s6): rates.k25
+      (s7, s10): rates.k24
+      (s10, s7): rates.k25
+  km1out:
+    matrix:
+      (s15, s1): rates.k2
+      (s15, s2): rates.k2
+      (s15, s3): rates.k2
+      (s15, s4): rates.k2
+      (s15, s5): rates.k2
+      (s15, s6): rates.k2
+      (s15, s7): rates.k2
+      (s15, s8): rates.k2
+      (s15, s9): rates.k2
+      (s15, s10): rates.k2
+      (s15, s15): rates.k48
+  km1ps2open:
+    matrix:
+      (s11, s4): rates.k56
+      (s4, s11): rates.k57
+      (s11, s11): rates.k52
+      (s11, s12): rates.k53
+      (s12, s11): rates.k54
+      (s12, s12): rates.k55
+  km1ps2closed:
+    matrix:
+      (s11, s4): rates.k56
+      (s4, s11): rates.k57
+      (s11, s11): rates.k52
+      (s11, s12): rates.k43
+      (s12, s11): rates.k44
+      (s12, s12): rates.k45
+  km1ps2open2:
+    matrix:
+      (s13, s4): rates.k56
+      (s4, s13): rates.k57
+      (s13, s13): rates.k52
+      (s13, s14): rates.k53
+      (s14, s13): rates.k54
+      (s14, s14): rates.k55
+  km1ps2closed2:
+    matrix:
+      (s13, s4): rates.k56
+      (s4, s13): rates.k57
+      (s13, s13): rates.k52
+      (s13, s14): rates.k43
+      (s14, s13): rates.k44
+      (s14, s14): rates.k45
+  km5out:
+    matrix:
+      (s16, s1): rates.k40
+      (s16, s2): rates.k40
+      (s16, s3): rates.k40
+      (s16, s4): rates.k40
+      (s16, s5): rates.k40
+      (s16, s6): rates.k40
+      (s16, s7): rates.k40
+      (s16, s8): rates.k40
+      (s16, s9): rates.k40
+      (s16, s10): rates.k40
+      (s16, s16): rates.k48
+  km6:
+    matrix:
+      (s1, s1): rates.k40
+  km7:
+    matrix:
+      (s4, s4): rates.k40
+
+initial_concentration:
+  input400:
+    compartments: [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12,  s15, s16]
+    parameters: [inputs400.APC660, inputs400.APC660,inputs400.APC660a,inputs400.APC680,inputs400.PC650,inputs400.PC650,inputs400.PC650,inputs400.PC640,inputs400.PC640,inputs400.PC640,inputs400.PS2, inputs.zero, inputs.zero, inputs.zero]
+  input590:
+    compartments: [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s13, s14,  s15, s16]
+    parameters: [inputs590.APC660, inputs590.APC660,inputs590.APC660a,inputs590.APC680,inputs590.PC650,inputs590.PC650,inputs590.PC650,inputs590.PC640,inputs590.PC640,inputs590.PC640,inputs590.PS2, inputs.zero, inputs.zero, inputs.zero]
+  input5:
+    compartments: [s1]
+    parameters: [inputs.one]
+  input6:
+    compartments: [s4]
+    parameters: [inputs.one]
+
+# 6 needed ! does this mean that the penalty is s1-s2*area.1 ?
+# equal_area_penalties:
+#   - type: equal_area
+#     source: s2
+#     source_intervals: [[0, 1000]]
+#     target: s1
+#     target_intervals: [[0, 1000]]
+#     parameter: area.1
+#     weight: 2.E-3
+
+# 6 needed ! why is it called compartment here and source with equal_area? does this mean that s2=s1*rel.r1 ?
+spectral_relations:
+  - compartment: s1
+    target: s2
+    parameter: rel.equals
+    interval: [[0, 1000]]
+  - compartment: s1
+    target: s3
+    parameter: rel.equals
+    interval: [[0, 1000]]
+  - compartment: s5
+    target: s6
+    parameter: rel.equals
+    interval: [[0, 1000]]
+  - compartment: s5
+    target: s7
+    parameter: rel.equals
+    interval: [[0, 1000]]
+  - compartment: s8
+    target: s9
+    parameter: rel.equals
+    interval: [[0, 1000]]
+  - compartment: s8
+    target: s10
+    parameter: rel.equals
+    interval: [[0, 1000]]
+
+spectral_constraints:
+  - type: zero
+    compartment: s12
+    interval:
+      - [1, 1000]
+  - type: zero
+    compartment: s14
+    interval:
+      - [1, 1000]
+  - type: zero
+    compartment: s15
+    interval:
+      - [1, 1000]
+  - type: zero
+    compartment: s16
+    interval:
+      - [1, 1000]
+
+# it is implicitly normalized, i.e. divided by sum of irfscale parameters
+irf:
+  irf1:
+    type: spectral-multi-gaussian
+    center: [irf.center1]
+    width: [irf.width1_1,irf.width1_2]
+    scale: [irf.scale_full,irf.scale1]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp1, irf.data1_disp2]
+    backsweep: True
+    backsweep_period: irf.common_backsweep
+  irf2:
+    type: spectral-multi-gaussian
+    center: [irf.center2]
+    width: [irf.width2_1,irf.width2_2]
+    scale: [irf.scale_full,irf.scale2]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp1, irf.data1_disp2]
+    backsweep: True
+    backsweep_period: irf.common_backsweep
+  irf3:
+    type: spectral-multi-gaussian
+    center: [irf.center3]
+    width: [irf.width3_1,irf.width3_2]
+    scale: [irf.scale_full,irf.scale3]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp3, irf.data1_disp4]
+    backsweep: True
+    backsweep_period: irf.common_backsweep
+  irf4:
+    type: spectral-multi-gaussian
+    center: [irf.center4]
+    width: [irf.width4_1,irf.width4_2]
+    scale: [irf.scale_full,irf.scale4]
+    dispersion_center: irf.common_dispcenter
+    center_dispersion: [irf.data1_disp3, irf.data1_disp4]
+    backsweep: True
+    backsweep_period: irf.common_backsweep
