@@ -58,16 +58,16 @@ scale:
   - ["5", 9.42E-1, {"vary": True}]
 
 scalem:
-  - ["1", 1, {"vary": False}]
-  - ["2", 0.481, {"vary": False}]
-  - ["3", 0.4956, {"vary": False}]
-  - ["4", 0.599, {"vary": False}]
-  - ["5", 0.459, {"vary": False}]
-  - ["6", 1., {"vary": False}]
-  - ["7", 0.08188, {"vary": False}]
-  - ["8", 0.1148, {"vary": False}]
-  - ["9", 0.0917, {"vary": False}]
-  - ["10", 0.07, {"vary": False}]
+  - ["open1", 1, {"vary": False}]
+  - ["closed1_ds1", 0.481, {"vary": False}]
+  - ["common_out_ds1", 0.4956, {"vary": False}]
+  - ["closed1_ds2", 0.599, {"vary": False}]
+  - ["common_out_ds2", 0.459, {"vary": False}]
+  - ["open2", 1., {"vary": False}]
+  - ["closed2_ds3", 0.08188, {"vary": False}]
+  - ["common_out_ds3", 0.1148, {"vary": False}]
+  - ["closed2_ds4", 0.0917, {"vary": False}]
+  - ["common_out_ds4", 0.07, {"vary": False}]
 
 irf:
   - ["center1",51.2005653, {"vary": False}]

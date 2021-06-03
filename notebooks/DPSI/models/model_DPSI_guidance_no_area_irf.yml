@@ -1,26 +1,26 @@
 type: kinetic-spectrum
 dataset:
   dataset1:
-    megacomplex: [open1,closed1,complex5]
-    megacomplex_scale: [scalem.1,scalem.2,scalem.3]
+    megacomplex: [open1,closed1,common_out]
+    megacomplex_scale: [scalem.open1,scalem.closed1_ds1,scalem.common_out_ds1]
     initial_concentration: input400
     irf: irf1
     scale: scale.1
   dataset2:
-    megacomplex: [open1,closed1,complex5]
-    megacomplex_scale: [scalem.1,scalem.4,scalem.5]
+    megacomplex: [open1,closed1,common_out]
+    megacomplex_scale: [scalem.open1,scalem.closed1_ds2,scalem.common_out_ds2]
     initial_concentration: input400
     irf: irf2
     scale: scale.2
   dataset3:
-    megacomplex: [open2,closed2,complex5]
-    megacomplex_scale: [scalem.6,scalem.7,scalem.8]
+    megacomplex: [open2,closed2,common_out]
+    megacomplex_scale: [scalem.open2,scalem.closed2_ds3,scalem.common_out_ds3]
     initial_concentration: input590
     irf: irf3
     scale: scale.3
   dataset4:
-    megacomplex: [open2,closed2,complex5]
-    megacomplex_scale: [scalem.6,scalem.9,scalem.10]
+    megacomplex: [open2,closed2,common_out]
+    megacomplex_scale: [scalem.open2,scalem.closed2_ds4,scalem.common_out_ds4]
     initial_concentration: input590
     irf: irf4
     scale: scale.4
@@ -42,7 +42,7 @@ megacomplex:
     k_matrix: [km1common,km1out,km1ps2open2]
   closed2:
     k_matrix: [km1common,km1out,km1ps2closed2]
-  complex5:
+  common_out:
     k_matrix: [km1common,km5out]
   complex6:
     k_matrix: [km6]
