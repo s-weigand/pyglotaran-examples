@@ -2,25 +2,25 @@ type: kinetic-spectrum
 dataset:
   dataset1:
     megacomplex: [complex1]
-#    megacomplex_scale: [scalem.1]
+    #    megacomplex_scale: [scalem.1]
     initial_concentration: input400
     irf: irf1
     scale: scale.1
   dataset2:
     megacomplex: [complex1]
-#    megacomplex_scale: [scalem.1]
+    #    megacomplex_scale: [scalem.1]
     initial_concentration: input400
     irf: irf2
     scale: scale.2
   dataset3:
     megacomplex: [complex2]
-#    megacomplex_scale: [scalem.6,scalem.7,scalem.8]
+    #    megacomplex_scale: [scalem.6,scalem.7,scalem.8]
     initial_concentration: input590
     irf: irf3
     scale: scale.3
   dataset4:
     megacomplex: [complex2]
-#    megacomplex_scale: [scalem.6,scalem.9,scalem.10]
+    #    megacomplex_scale: [scalem.6,scalem.9,scalem.10]
     initial_concentration: input590
     irf: irf4
     scale: scale.4
@@ -31,8 +31,8 @@ megacomplex:
   complex2:
     k_matrix: [km2]
 
-# how can i now express that the first 20 lines  
-# are common for complexes 1-5, and the next 11 lines  
+# how can i now express that the first 20 lines
+# are common for complexes 1-5, and the next 11 lines
 # are common for complexes 1-4? how can i specify in chunks?
 # note that earlier definition will override later definition
 k_matrix:
@@ -49,7 +49,6 @@ k_matrix:
       (t4, t3): rates2.k3
       (t4, t4): rates2.k4
 
-
 initial_concentration:
   input400:
     compartments: [s1, s2, s3, s4]
@@ -63,8 +62,8 @@ irf:
   irf1:
     type: spectral-multi-gaussian
     center: [irf.center1]
-    width: [irf.width1,irf.width2]
-    scale: [irf.scale1,irf.scale2]
+    width: [irf.width1, irf.width2]
+    scale: [irf.scale1, irf.scale2]
     dispersion_center: irf.common_dispcenter
     center_dispersion: [irf.data1_disp1, irf.data1_disp2]
     backsweep: True
@@ -72,8 +71,8 @@ irf:
   irf2:
     type: spectral-multi-gaussian
     center: [irf.center2]
-    width: [irf.width3,irf.width4]
-    scale: [irf.scale1,irf.scale3]
+    width: [irf.width3, irf.width4]
+    scale: [irf.scale1, irf.scale3]
     dispersion_center: irf.common_dispcenter
     center_dispersion: [irf.data1_disp1, irf.data1_disp2]
     backsweep: True
@@ -81,8 +80,8 @@ irf:
   irf3:
     type: spectral-multi-gaussian
     center: [irf.center3]
-    width: [irf.width5,irf.width6]
-    scale: [irf.scale1,irf.scale4]
+    width: [irf.width5, irf.width6]
+    scale: [irf.scale1, irf.scale4]
     dispersion_center: irf.common_dispcenter
     center_dispersion: [irf.data1_disp3, irf.data1_disp4]
     backsweep: True
@@ -90,8 +89,8 @@ irf:
   irf4:
     type: spectral-multi-gaussian
     center: [irf.center4]
-    width: [irf.width7,irf.width8]
-    scale: [irf.scale1,irf.scale5]
+    width: [irf.width7, irf.width8]
+    scale: [irf.scale1, irf.scale5]
     dispersion_center: irf.common_dispcenter
     center_dispersion: [irf.data1_disp3, irf.data1_disp4]
     backsweep: True
