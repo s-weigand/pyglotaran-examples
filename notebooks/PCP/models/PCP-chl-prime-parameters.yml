@@ -29,7 +29,7 @@ kinetic:
 
 rel:
   - ['r1', 1, {"vary": False}]
-  
+
 scaling:
   - [0.75, {vary: false}]
   - [0.25, {vary: false}]

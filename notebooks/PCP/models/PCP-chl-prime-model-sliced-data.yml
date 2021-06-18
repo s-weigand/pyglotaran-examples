@@ -24,8 +24,8 @@ k_matrix:
       (s6, s4): kinetic.18
       (s5, s5): kinetic.7
       (s6, s6): kinetic.10
-      
-      
+
+
 irf:
   irf1:
     type: gaussian

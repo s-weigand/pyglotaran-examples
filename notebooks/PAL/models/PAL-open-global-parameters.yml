@@ -6,12 +6,12 @@ input:
 irf_common:
   - ["center", 100.0]
   - ["backsweep", 13800.0, {vary: false}]
-  
-irf_1: 
+
+irf_1:
   - ["width", 4.3665]
   - ["scale", 1, {vary: false}]
-  
-irf_2: 
+
+irf_2:
   - ["width", 37.536]
   - ["scale", 0.136, {vary: true}]
 

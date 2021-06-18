@@ -7,16 +7,16 @@ input:
 irf_common_closed:
   - ["center", 116]
   - ["backsweep", 13800.0, {vary: false}]
-  
+
 irf_common_open:
   - ["center", 99]
   - ["backsweep", 13800.0, {vary: false}]
-  
-gauss_1: 
+
+gauss_1:
   - ["width", 4.63948]
   - ["scale", 1, {vary: false}]
-  
-gauss_2: 
+
+gauss_2:
   - ["width", 48.8929]
   - ["scale", 0.103935]
 
@@ -37,12 +37,11 @@ kinetic:
 scaling:
   - [1.6, {vary: false}]
   - [1.26]
-  
+
 dataset_scale:
   - ["open_scale", 0.1]
   - ["closed_scale", 1, {vary: false}]
-  
+
 mc_scale:
   - ["PS1", 0.70, {vary: false}]
   - ["PS2", 0.30, {vary: false}]
-  

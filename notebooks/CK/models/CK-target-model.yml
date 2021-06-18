@@ -19,15 +19,15 @@ k_matrix:
       (s3, s4): kinetic.3_2
       (s4, s3): kinetic.3
       (s4, s4): kinetic.4
-      
-      
+
+
 irf:
   irf1:
     type: spectral-multi-gaussian
     center: [irf.center]
     width: [irf.width]
     dispersion_center: irf.dispc
-    center_dispersion: [irf.disp1, irf.disp2] 
+    center_dispersion: [irf.disp1, irf.disp2]
     backsweep: True
     backsweep_period: irf.backsweep
 
@@ -41,7 +41,7 @@ initial_concentration:
       input.3,
       input.4
       ]
-      
+
 
 spectral_relations:
   - compartment: s1

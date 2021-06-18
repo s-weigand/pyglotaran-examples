@@ -18,8 +18,8 @@ kinetic:
   - ["7", {expr: '$kinetic.4 * $scaling.1'}]
   - ["8", {expr: '$kinetic.5 * $scaling.2'}]
 #   - {non-negative: true}
-  
-  
+
+
 scaling:
   - [1.87, {vary: false}]
   - [1.37, {vary: false}]

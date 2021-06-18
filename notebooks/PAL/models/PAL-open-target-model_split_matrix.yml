@@ -19,9 +19,9 @@ k_matrix:
       (s4, s5): kinetic.4
       (s5, s4): kinetic.4_2
       (s5, s5): kinetic.5
-      
-      
-      
+
+
+
 irf:
   irf1:
     type: spectral-multi-gaussian
@@ -42,7 +42,7 @@ initial_concentration:
       input.4,
       input.0,
       ]
-      
+
 
 spectral_constraints:
   - type: zero
@@ -63,7 +63,7 @@ dataset:
     initial_concentration: input1
     megacomplex: [mc1]
     irf: irf1
-    
+
 
 weights:
   - datasets: [dataset1]

@@ -8,12 +8,12 @@ input:
 irf_common:
   - ["center", 100.229, {vary: false}]
   - ["backsweep", 13800.0, {vary: false}]
-  
-irf_1: 
+
+irf_1:
   - ["width", 4.63948, {vary: false}]
   - ["scale", 1, {vary: false}]
-  
-irf_2: 
+
+irf_2:
   - ["width", 48.8929, {vary: false}]
   - ["scale", 0.136, {vary: false}]
 
@@ -31,4 +31,3 @@ kinetic:
 scaling:
   - [1.7, {vary: false}]
   - [4]
-  

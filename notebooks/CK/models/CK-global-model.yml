@@ -9,15 +9,15 @@ k_matrix:
     matrix:
       (s2, s1): kinetic.1
       (s2, s2): kinetic.2
-      
-      
+
+
 irf:
   irf1:
     type: spectral-multi-gaussian
     center: [irf.center]
     width: [irf.width]
     dispersion_center: irf.dispc
-    center_dispersion: [irf.disp1, irf.disp2] 
+    center_dispersion: [irf.disp1, irf.disp2]
     backsweep: True
     backsweep_period: irf.backsweep
 

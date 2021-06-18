@@ -21,7 +21,7 @@ k_matrix:
       (s2, s4): kinetic.8
       (s4, s4): kinetic.6
       (s5, s5): kinetic.6
-      
+
 spectral_constraints:
   - type: zero
     compartment: s1
@@ -35,8 +35,8 @@ spectral_constraints:
     compartment: s4
     interval:
       - [100, 690]
-      
-      
+
+
 irf:
   irf1:
     type: gaussian

@@ -25,10 +25,10 @@
 ### pyglotaran-extras
 - default no heatmap (performance?) -> plots are slow in general 30% only for creation
 - easier way to display k_matrix of megacomplex (do all have a k_matrix? different name? jörn changes?)
-- 
+-
 
 ## case studies
-- CK 
+- CK
 - DPS1
 - bacterial reaction center (glotaran + notebook)
 
