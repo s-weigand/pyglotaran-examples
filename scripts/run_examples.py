@@ -7,6 +7,7 @@ from pathlib import Path
 import matplotlib
 import matplotlib.pyplot as plt
 import yaargh
+from glotaran.deprecation.deprecation_utils import GlotaranApiDeprecationWarning
 from glotaran.io import save_result
 from matplotlib.backends.backend_pdf import PdfPages
 
@@ -45,13 +46,9 @@ def script_run_wrapper(func):
                 "ignore", message=r"Matplotlib.+non-GUI.+", category=UserWarning
             )
             if kwargs["raise_on_deprecation"]:
-                warnings.filterwarnings(
-                    "error", message=r".+glotaran.+", category=DeprecationWarning
-                )
+                warnings.filterwarnings("error", category=GlotaranApiDeprecationWarning)
             else:
-                warnings.filterwarnings(
-                    "always", message=r".+glotaran.+", category=DeprecationWarning
-                )
+                warnings.filterwarnings("always", category=GlotaranApiDeprecationWarning)
             if "GITHUB" in os.environ:
                 warnings.formatwarning = github_format_warning
 
