@@ -36,5 +36,5 @@ dataset:
     irf: irf1
 
 
-weights:
-    datasets: [dataset1]
+# weights:
+#     datasets: [dataset1]
