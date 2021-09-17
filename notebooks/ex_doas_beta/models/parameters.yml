@@ -10,7 +10,7 @@ osc:
 35.9500198 ,     65.5325775 ,
   {vary: False}]
 
-j:
+input:
   - ['1', 1.0, {non-negative: False, vary: False}]
   - ['0', 0.0, {non-negative: False, vary: False}]
 
