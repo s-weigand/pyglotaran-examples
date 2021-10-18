@@ -13,6 +13,10 @@ on:
         description: "pyglotaran-examples branch/tag to use"
         required: true
         default: "main"
+      install_extras:
+        description: "Whether or not to install pyglotaran_extras"
+        required: true
+        default: "true"
 
 jobs:
   run-examples:
@@ -54,10 +58,11 @@ jobs:
         with:
           path: pyglotaran-examples
       - id: example-run
-        uses: glotaran/pyglotaran-examples@main
+        uses: ./pyglotaran-examples
         with:
           example_name: ${{ matrix.example_name }}
           examples_branch: ${{ github.event.inputs.pyglotaran_examples_branch }}
+          install_extras: ${{ github.event.inputs.install_extras }}
       - name: Upload Example Plots Artifact
         uses: actions/upload-artifact@v2
         with:
