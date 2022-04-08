@@ -64,7 +64,7 @@ jobs:
           examples_branch: ${{ github.event.inputs.pyglotaran_examples_branch }}
           install_extras: ${{ github.event.inputs.install_extras }}
       - name: Upload Example Plots Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: example-results
           path: ${{ steps.example-run.outputs.plots-path }}
