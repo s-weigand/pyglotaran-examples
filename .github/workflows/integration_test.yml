@@ -39,7 +39,7 @@ jobs:
             sim-6d-disp,
           ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
         with:
           repository: "glotaran/pyglotaran"
           # If not provided (push and pull_request event) it uses the default branch
@@ -54,7 +54,7 @@ jobs:
           pip install .
       - name: Cloning pyglotaran-examples
         if: ${{ github.event.inputs.pyglotaran_examples_branch }} == ""
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
         with:
           path: pyglotaran-examples
       - id: example-run
